@@ -11,12 +11,17 @@ def region_grow(image, seed_point):
     :return: A 3D binary segmentation mask with the same dimensions as image
     """
 
-    # apply threshold
-    f = 5  # number of sigmas, experimental factor
+    # data around seed point
     values = neighbour_values(image, seed_point)  # values around seed point
     mu = int(sum(values) / 27)  # mean, 3^3 neighbours including point
     sigma = int(np.std(values))  # standard deviation
     print("mu: ", mu, ", sigma: ", sigma)  # debug
+
+    # filter image
+    image = ndimage.median_filter(image, size=3)
+
+    # apply threshold
+    f = 5  # number of sigmas, experimental factor
     threshold_mask = threshold2(image, mu-f*sigma, mu+f*sigma)
     print("total number of points in threshold: ", sum(sum(sum(threshold_mask))))  # debug
 
