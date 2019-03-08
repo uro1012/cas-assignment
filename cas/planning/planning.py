@@ -76,7 +76,7 @@ class ImageViewer:
                 print('Histogram')
                 segmentation_hist = scipy.ndimage.histogram(self.segmentation, 0, 4, 5)
                 print(segmentation_hist)
-            elif event.key == 's':
+            elif event.key == 'p':
                 print('Saving')
                 np.save('segmentation.npy', self.segmentation)
             else:
