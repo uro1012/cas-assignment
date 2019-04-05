@@ -126,10 +126,33 @@ Send a ZIP file with the follwing files:
 #. Your report as PDF with filename [firstname lastname]_assignment3_report.pdf
 #. Your code with filename [firstname lastname]_assignment3_code.py
 #. A textfile with the console output when you ran the code with filename [firstname lastname]_assignment3_output.txt
+#. A file with a screenshot of the plots  [firstname lastname]_assignment3_screenshot.png
 
 Name your ZIP file as ``firstname_lastname_assignment3.zip`` and upload it to ILIAS before the deadline.
 
+Grading
+-------
+
+The assignment accounts for 33% of the grade for the assignments.
+
+You can get 10 Points in this assignment:
+
+* Working code and a correct result gives you 5 pts
+   * Important: We don't grade the code quality, but it would be nice if we don't have to spend hours to understand it
+* If the code does not work, but you gave it at least a decent try you get 2.5 pts
+* For each correctly answered question you get 1 pt
 
 Materials
 ----------
+KD-Trees
+________
+You don't neccessarily need to use them, but it will make the search for the closest point easier.
+
 * https://en.wikipedia.org/wiki/K-d_tree
+* https://scikit-learn.org/stable/modules/neighbors.html
+* https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.spatial.KDTree.query.html#scipy.spatial.KDTree.query
+
+Solving systems of equations
+____________________________
+* https://docs.scipy.org/doc/numpy/reference/routines.linalg.html#solving-equations-and-inverting-matrices
+* https://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.svd.html#numpy.linalg.svd
