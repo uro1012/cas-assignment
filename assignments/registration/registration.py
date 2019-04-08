@@ -90,12 +90,13 @@ def icp(source, target, init_pose=None, max_iterations=30, tolerance=0.0001):
         T = np.dot(T_ppm, T)
 
         # compute error and mean distance
+        error_old = error
         error = np.transpose(target[index[:]]) - np.dot(R, np.transpose(source[:])) - t
         error = (error[:]**2).sum()
         distances = np.mean(distance)
 
         # stop if precise enough
-        if error < tolerance:
+        if abs(error-error_old) < tolerance:
             break
 
     return T, distances, error
